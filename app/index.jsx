@@ -1,15 +1,22 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import Sadek from '../assets/images/ahmed-sadek.jpeg';
+import { Link } from 'expo-router';
 
 const index = () => {
   return (
     <View style={[styles.container]}>
-      <Image 
+      <Image
         source={Sadek}
         style={[styles.mainImage]}
       />
-      <Text style={styles.title}>Ahmed Sadek</Text>
-      <Text style={styles.subtitle}>Frontend developer & Instructor</Text>
+      <View>
+        <Text style={styles.title}>Ahmed Sadek</Text>
+        <Text style={styles.subtitle}>Frontend developer & Instructor</Text>
+      </View>
+      <View style={styles.links}>
+        <Link href={"/about"} style={styles.link}>About</Link>
+        <Link href={"/contact"} style={styles.link}>Contact</Link>
+      </View>
     </View>
   )
 }
@@ -22,10 +29,10 @@ const styles = StyleSheet.create({
     rowGap: 20
   },
   mainImage: {
-    width:300,
-    height:300,
+    width: 300,
+    height: 300,
     borderRadius: 20,
-  },  
+  },
   title: {
     paddingVertical: 10,
     paddingHorizontal: 30,
@@ -39,6 +46,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#333",
     textDecorationLine: "underline"
+  },
+  links: {
+    display: "flex",
+    flexDirection: "row",
+    columnGap: 10
+  },
+  link: {
+    textDecorationLine: "underline",
+    color: "blue"
   }
 })
 
